@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+<style>
+
+  .first-txt {
+            position: absolute;
+            top: 17px;
+            left: 50px;
+  }
+
+</style>
+
+{% block title %}
+- Index 
+{% endblock %}
+
+{% endblock %}
+
+{% block main %}
+
+{% with meassages= get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-info" role="alert">
+  {{message}}
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="gfg">
+  <img src="/static/images/istockphoto-1226420814-612x612.jpg" style="margin: 3%; position: relative;">
+  <h3 style="position: absolute; top: 15%; left: 33%;">Hello, {{name}}! How may I assist you?</h3>
+</div>
+
+
+
+{% endblock %}

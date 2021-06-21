@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+- Search Salary Slip
+{% endblock %}
+
+{% block main %}
+
+{% with messages= get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert alert-danger" role="alert" style="width: 40%; margin-left: 30%; text-align: center;">
+  {{message}}
+</div>
+
+{% endfor %}
+{% endif %}
+
+{% endwith %}
+
+    <br>
+      <h3 style="text-align: center; font-family: 'Times New Roman', Times, serif; color: #3db0cc; font-style: unset;">Search Salary Slip using Employee ID</h3>
+     <br>
+
+<form method="post" action="/searchsalary" >
+  <div class="form-group">
+  <input autocomplete="on" autofocus class="form-control" name="eid" placeholder="Employee ID" type="text"/>
+</div>
+
+
+  <button class="btn btn-primary" type="submit" style="background-color: #3db0cc; color:white; border-color: #3db0cc;">Search</button>
+</form>
+
+{% endblock %}
